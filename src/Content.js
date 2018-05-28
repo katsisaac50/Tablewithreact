@@ -4,7 +4,7 @@ import ReactTable from 'react-table'
 import "react-table/react-table.css";
 
 // import $ from 'jquery';
-import BootstrapTable from 'reactjs-bootstrap-table';
+//import BootstrapTable from 'reactjs-bootstrap-table';
 
 class Content extends Component {
     constructor(props) {
