@@ -11,7 +11,7 @@ class Content extends Component {
         super(props);
 
         this.state = {
-            dataCollection: []
+          userData: []
         };
     }
     componentDidMount() {
@@ -19,7 +19,7 @@ class Content extends Component {
         .then(({ data }) => {
                 console.log(data);
                 this.setState(
-                    { array: data }
+                    { userData: data }
                 );
             })
             .catch(function (error) {
@@ -40,45 +40,64 @@ class Content extends Component {
 
     }
     render() {
-        // const { data } = this.state;
-        //console.log(this.state.array);
+     
+  //Store data in uData
+         const uData  = this.state.userData;
+       // console.log(this.state.userData);
+       
         return(<div>
         <ReactTable
-          data={data}
+          data={uData}
           columns={[
             {
-              Header: "Name",
+              Header: "User Details",
               columns: [
                 {
-                  Header: "name",
+                  Header: "Name",
                   accessor: "name"
                 },
                 {
-                  Header: "Last Name",
-                  id: "lastName",
-                  accessor: d => d.lastName
+                  Header: "Username",
+                  id: "userName",
+                  accessor: d => d.username
+
+                },{
+                  Header: "Email",
+                  accessor: "email"
+                },{
+                  Header: "Phone",
+                  accessor: "phone"
+                },{
+                  Header: "Website",
+                  accessor: "website"
                 }
               ]
             },
             {
-              Header: "Info",
+              Header: "Company Info",
               columns: [
                 {
-                  Header: "Age",
-                  accessor: "age"
+                  Header: "Name",
+                  accessor: "company.name"
                 },
                 {
-                  Header: "Status",
-                  accessor: "status"
+                  Header: "Service",
+                  accessor: "company.bs"
                 }
               ]
             },
             {
-              Header: 'Stats',
+              Header: 'Address',
               columns: [
                 {
-                  Header: "Visits",
-                  accessor: "visits"
+                  Header: "City",
+                  accessor: "address.city"
+                },{
+                  Header: "Streat",
+                  accessor: "address.street"
+                },{
+                  Header: "Suite",
+                  accessor: "address.suite"
                 }
               ]
             }
