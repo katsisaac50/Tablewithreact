@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import ReactTable from 'react-table'
 import "react-table/react-table.css";
+import Home from './Home';
 
 // import $ from 'jquery';
 //import BootstrapTable from 'reactjs-bootstrap-table';
@@ -11,8 +12,11 @@ class Content extends Component {
         super(props);
 
         this.state = {
-          userData: []
+          
+          userData: null
         };
+        
+        {console.log(props)}
     }
     componentDidMount() {
         axios.get('http://jsonplaceholder.typicode.com/users/')
@@ -40,12 +44,16 @@ class Content extends Component {
 
     }
     render() {
-     
+      if(!this.state.userData) {
+        return null;
+      }
+  
   //Store data in uData
-         const uData  = this.state.userData;
-       // console.log(this.state.userData);
+        const uData  = this.state.userData;
+        console.log(uData);
        
         return(<div>
+          <Home grade={uData}/>
         <ReactTable
           data={uData}
           columns={[
@@ -141,5 +149,6 @@ class Content extends Component {
 
 
 }
+
 
 export default Content;
