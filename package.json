@@ -25,13 +25,13 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://katsisaac50.github.io/secondReactProject.git"
+        "url": "git+https://katsisaac50.github.io/Tablewithreact.git"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "bugs": {
-        "url": "https://katsisaac50.github.io/secondReactProject/issues"
+        "url": "https://katsisaac50.github.io/Tablewithreact/issues"
     },
-    "homepage": "https://katsisaac50.github.io/secondReactProject"
+    "homepage": "https://katsisaac50.github.io/Tablewithreact/"
 }
