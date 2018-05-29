@@ -19,7 +19,7 @@ class Content extends Component {
         {console.log(props)}
     }
     componentDidMount() {
-        axios.get('http://jsonplaceholder.typicode.com/users/')
+        axios.get('https://jsonplaceholder.typicode.com/users/')
         .then(({ data }) => {
                 console.log(data);
                 this.setState(
